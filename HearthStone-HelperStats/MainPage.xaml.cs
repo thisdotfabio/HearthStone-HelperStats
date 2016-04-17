@@ -26,5 +26,10 @@ namespace HearthStone_HelperStats
         {
             this.InitializeComponent();
         }
+
+        private void CollectionButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CollectionUI.CollectionPage));
+        }
     }
 }

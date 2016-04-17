@@ -1,0 +1,65 @@
+﻿<UserControl
+    x:Class="HearthStone_HelperStats.CollectionUI.CardListItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HearthStone_HelperStats.CollectionUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    MaxHeight="36"
+    MaxWidth="400">
+
+    <Border BorderThickness="1" CornerRadius="3">
+        <Grid Background="#FF303030" CornerRadius="2.4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="0" Stretch="None">
+                <Image Source="ms-appx:///Assets/sprite32.png"
+                           Width="32" Margin="0,-64,0,0">
+                </Image>
+            </Viewbox>
+            <TextBlock Grid.Column="0" Text="{Binding cost}"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                           FontFamily="ms-appx:/Assets/bliz-quadrata.ttf#BlizQuadrata Web"
+                           Foreground="White" FontSize="16" FontWeight="Bold"/>
+            <Grid Grid.Column="1" Width="32" Height="32"/>
+            <!--<Viewbox Grid.Column="2" Stretch="None">
+                <Image Source="{Binding HHCode, Converter={StaticResource HHCodePathConverter}}"
+                            Margin="50,-120,0,0"/>
+            </Viewbox>-->
+            <Rectangle Grid.Column="2">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Color="#FF303030" Offset="0.50"/>
+                        <GradientStop Color="#00000000" Offset="0.65"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding name}" 
+                           VerticalAlignment="Center" FontSize="18.667" 
+                           FontFamily="ms-appx:/Assets/bliz-quadrata.ttf#BlizQuadrata Web"
+                           Margin="10,0,0,0"/>
+            <Button Grid.Column="3" Width="32" Height="32" Padding="0" BorderThickness="0">
+                <Border Width="30" Height="30" 
+                            BorderBrush="#FF977940" BorderThickness="3" CornerRadius="4">
+                    <TextBlock Text="N" Foreground="White"
+                                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                                   FontFamily="ms-appx:/Assets/bliz-quadrata.ttf#BlizQuadrata Web"/>
+                </Border>
+            </Button>
+            <Button Grid.Column="4" Width="32" Height="32" Padding="0" BorderThickness="0">
+                <Border Width="30" Height="30" 
+                            BorderBrush="Yellow" BorderThickness="3" CornerRadius="4">
+                    <TextBlock Text="G" Foreground="White"
+                                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                                   FontFamily="ms-appx:/Assets/bliz-quadrata.ttf#BlizQuadrata Web"/>
+                </Border>
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>
